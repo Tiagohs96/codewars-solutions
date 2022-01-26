@@ -5,7 +5,8 @@ def cakes(recipe, available):
     Write a function cakes(), which takes the recipe (object) and the available ingredients (also an object) and returns the maximum number of cakes Pete can bake (integer). For simplicity there are no units for the amounts (e.g. 1 lb of flour or 200 g of sugar are simply 1 or 200). Ingredients that are not present in the objects, can be considered as 0.
     """
 
-    s = {int(available[k]/recipe[k]) if k in available.keys() else 0 for k in recipe.keys()}
+    s = {int(available.get(k)/recipe.get(k)) if k in available.keys() else 0\
+         for k in recipe.keys()}
 
     return min(s)
 
